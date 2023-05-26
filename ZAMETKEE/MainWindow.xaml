@@ -1,0 +1,92 @@
+﻿<Window x:Class="ZAMETKEE.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZAMETKEE"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="478" Width="835">
+    <Grid  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="11,0,0,0" Width="800" Height="433">
+
+
+        <TextBox Margin="13,48,0,0" TextWrapping="Wrap" Text="Please, choose the file!" x:Name="tex" HorizontalAlignment="Left" Width="598" Height="393" VerticalAlignment="Top" AcceptsReturn="True"/>
+        <TextBox Margin="212,10,0,0" TextWrapping="Wrap" x:Name="size" TextChanged="SIZE" HorizontalAlignment="Left" Width="25" Height="23" VerticalAlignment="Top"/>
+
+        <CheckBox Content="Bolt" Margin="146,7,0,0" FontWeight="Bold" Click="CB" x:Name="B" HorizontalAlignment="Left" Width="43" Height="15" VerticalAlignment="Top"/>
+        <CheckBox Content="Cursive" Margin="146,22,0,0" FontStyle="Italic" Click="CB" x:Name="C" HorizontalAlignment="Left" Width="58" Height="15" VerticalAlignment="Top"/>
+
+        <ComboBox Margin="16,8,0,0" DropDownClosed="ShriftChange" x:Name="shrift" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="128">
+            <ComboBoxItem>
+                <Label FontFamily="Arial" Content="Arial"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label FontFamily="Bahnschrift" Content="Bahnschrift"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label FontFamily="Exotc350 Bd BT" Content="Exotc350 Bd BT"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label FontFamily="Calibri" Content="Calibri"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label FontFamily="Humnst777 Blk BT" Content="Humnst777 Blk BT"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label FontFamily="Microsoft JhengHei Light" Content="Microsoft JhengHei Light"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label FontFamily="Times New Roman" Content="Times New Roman"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label FontFamily="Segoe UI Emoji" Content="Segoe UI Emoji"/>
+            </ComboBoxItem>
+        </ComboBox>
+
+        <ComboBox Margin="246,8,0,0" DropDownClosed="ColourShriftChange" x:Name="word" HorizontalAlignment="Left" Width="128" Height="28" VerticalAlignment="Top">>
+            <ComboBoxItem>
+                <Label Content="green" Foreground="#FF258A1D" />
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label Content="yellow" Foreground="#FFCCC50E" />
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label Content="red" Foreground="#FFD00B0B" />
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label Content="black" Foreground="#000000" />
+            </ComboBoxItem>
+        </ComboBox>
+
+        <ComboBox Margin="0,8,0,0" DropDownClosed="ColourBackgroundChange" x:Name="back" HorizontalAlignment="Center" Width="42" Height="28" VerticalAlignment="Top">>
+            <ComboBoxItem>
+                <Label Content="green" Foreground="#FF258A1D" Background="#FF258A1D" />
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label Content="yellow" Foreground="#FFCCC50E" Background="#FFCCC50E" />
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label Content="red" Foreground="#FFD00B0B" Background="#FFD00B0B" />
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label Content="black" Foreground="#000000" Background="#000000" />
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <Label Content="white" Foreground="#ffffffff" Background="#ffffffff" />
+            </ComboBoxItem>
+        </ComboBox>
+
+        <Button Content="SAVE" Margin="703,7,15,397" IsCancel="True" x:Name="save" Click="save_Click"/>
+        <Button Content="Choosing file" HorizontalAlignment="Left" Margin="619,7,0,0" VerticalAlignment="Top" Height="29" Click="Button_Click" />
+        <Button HorizontalAlignment="Left" Height="29" Margin="580,7,0,0" VerticalAlignment="Top" Width="32" Click="Speake" x:Name="speak">
+            <Image Height="18" Source="/937fdc78f2c734bafd94b69378613641.png" Stretch="Fill" Width="22"/>
+        </Button>
+        <Button HorizontalAlignment="Left" Height="29" Margin="580,7,0,0" VerticalAlignment="Top" Width="32" Click="Pause" x:Name="pause">
+            <Image Height="22" Source="/pngegg.png" Stretch="Fill" Width="25"/>
+        </Button>
+        <Button Content="MP3 - Play" HorizontalAlignment="Left" Margin="434,7,0,0" VerticalAlignment="Top" Click="MP3_P" Height="29"/>
+        <Button Content="MP3 - Pause" HorizontalAlignment="Left" Margin="503,7,0,0" VerticalAlignment="Top" Click="MP3_S" Height="29"/>
+        <ListBox x:Name="LS" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="616,48,13,235" SelectionChanged="LS_SelectionChanged" />
+        <Button x:Name="dl" Content="delete last" HorizontalAlignment="Left" Margin="616,203,0,0" VerticalAlignment="Top" Click="DL"/>
+        <Button x:Name="da" Content="delete all" HorizontalAlignment="Left" Margin="679,203,0,0" VerticalAlignment="Top" Click="DA"/>
+    </Grid>
+</Window>
